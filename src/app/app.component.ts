@@ -12,7 +12,7 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  title = 'Zoobuch';
+  title = 'Zoo Book';
   animals: Animal[] = [
     {
       name: 'Hansi',
