@@ -1,17 +1,39 @@
 <!DOCTYPE html>
 
-<h1>
-  {{ title }}
-</h1>
+<section class="container">
+  <h1 class="display-4">
+    {{ title }}
+  </h1>
 
-<input type="text" [(ngModel)]="newAnimal.name" placeholder="animal name" />
-<input type="text" [(ngModel)]="newAnimal.type" placeholder="animal type" />
-<button (click)="addAnimal()">+</button>
+  <hr />
 
-<div *ngFor="let animal of animals">
-  <div>
-    {{ animal.name }}
-    ({{ animal.type }})
-    <button (click)="deleteAnimal(animal)">x</button>
+  <div class="card my-5">
+    <h2 class="card-header">Add a new animal</h2>
+    <input
+      type="text"
+      class="form-control"
+      [(ngModel)]="newAnimal.name"
+      placeholder="animal name"
+    />
+    <input
+      type="text"
+      class="form-control"
+      [(ngModel)]="newAnimal.type"
+      placeholder="animal type"
+    />
+    <button (click)="addAnimal()" class="btn btn-primary">+ add</button>
   </div>
-</div>
+
+  <div class="card">
+    <h2 class="card-header">List of all animals</h2>
+    <div *ngFor="let animal of animals" class="card-body">
+      <div>
+        {{ animal.name }}
+        ({{ animal.type }})
+        <button (click)="deleteAnimal(animal)" class="btn btn-danger btn-sm">
+          x
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
